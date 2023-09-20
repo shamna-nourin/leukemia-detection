@@ -1,0 +1,17 @@
+{% extends 'image_index.html' %}
+{% block body %}
+<form action="/predict" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <h1>LOAD IMAGE </h1>
+    <table width="486" border="1">
+      <tr>
+        <td width="201">Image </td>
+        <td width="269"><input type="file" name="file" /></td>
+      </tr>
+      </table>  
+  </div>
+  <div align="center">
+    <input type="submit" value="Upload" />
+  </div>
+</form>
+{% endblock %}

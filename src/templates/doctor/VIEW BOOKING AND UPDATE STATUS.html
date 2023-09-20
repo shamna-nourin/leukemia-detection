@@ -1,0 +1,39 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+
+    <h1>VIEW BOOKING </h1>
+    <table class="table table-dark table table-hover">
+      <tr>
+        <th >NAME</th>
+        <th >DOB</th>
+        <th >GENDER</th>
+        <th >SCHEDULE</th>
+        <th >DATE</th>
+        <th colspan="2">STATUS</th>
+      </tr>
+      {%for i in data%}
+      <tr>
+
+        <td>&nbsp;{{i['first_name']}} {{i['last_name']}}</td>
+        <td>&nbsp;{{i['dob']}}</td>
+        <td>&nbsp;{{i['gender']}}</td>
+        <td>&nbsp;{{i['fromtime']}} to {{i['totime']}}</td>
+        <td>&nbsp;{{i['date']}}</td>
+        {% if i['status']=='Accepted' %}
+        <td colspan="2"><a href="/PROVIDE_PRESCRIPTION?id={{ i['id'] }}#about">Add Prescription</a></td>
+        {% elif i['status']=='pending' %}
+        <td><a href="/accept_booking?id={{ i['id'] }}#about">Accept</a></td>
+        <td><a href="/reject_booking?id={{ i['id'] }}#about">Reject</a></td>
+        {% else %}
+        <td colspan="2">{{ i['status'] }}</td>
+        {% endif %}
+      </tr>
+      {%endfor%}
+      </table>
+
+</form> 
+</body>
+{% endblock %}

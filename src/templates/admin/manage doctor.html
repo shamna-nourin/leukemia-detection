@@ -1,0 +1,44 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="#">
+  <table  class="table table-dark table table-hover">
+    <tr>
+      <td>#</td>
+      <td>NAME</td>
+      <td>GENDER</td>
+      <td>ADDRESS</td>
+      <td>QUALIFICATION</td>
+      <td>SPECIALISATION</td>
+      <td>PHONE</td>
+      <td>EMAIL</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+   {% for i in data %}
+     <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['first_name'] }} {{ i['last_name'] }}</td>
+      <td>&nbsp;{{ i['gender'] }}</td>
+      <td>{{ i['place'] }} <br>{{ i['post'] }} <br> {{i['pin']}}</td>
+      <td>{{i['qualification']}}</td>
+      <td>&nbsp;{{i['specialisation']}}</td>
+      <td>{{i['phone_number']}}</td>
+      <td>{{i['email_id']}}</td>
+      <td><a href="/edit_doctor?id={{  i['login_id'] }}#about">EDIT</a></td>
+      <td><a href="/delete_doctor?id={{  i['login_id'] }}">DELETE</a></td>
+      <td><a href="/MANAGE_SCHEDULE?id={{  i['login_id'] }}#about">SCHEDULE</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="11"><div align="center">
+        <a href="/REGISTRATION_DR#about">ADD NEW</a>
+        <!--<input type="submit" name="Submit" value="ADD NEW" />-->
+      </div></td>
+    </tr>
+  </table> 
+</form>
+</body>
+{% endblock %}

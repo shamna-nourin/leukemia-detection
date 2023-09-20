@@ -1,0 +1,30 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/ADD_NEW_SCHEDULE#about">
+  <div align="center">
+    <h1>MANAGE SCHEDULE </h1>
+    <table class="table table-hover">
+      <tr>
+        <td>DATE</td>
+        <td>FROM TIME </td>
+        <td> TO TIME </td>
+        <td>&nbsp;</td>
+      </tr>
+      {% for i in data %}
+      <tr>
+        <td>&nbsp;{{i['date']}}</td>
+        <td>{{i['fromtime']}}</td>
+        <td>{{i['totime']}}</td>
+        <td><a href="/delete_schedule?id={{  i['id'] }}">DELETE</a></td>
+      </tr>
+      {% endfor%}
+      <tr>
+        <td colspan="4"><div align="center">
+          <input type="submit" class="btn btn-primary" name="Submit" value="ADD NEW" />
+        </div></td>
+      </tr>
+      </table>
+  </div>
+</form>
+{% endblock %}

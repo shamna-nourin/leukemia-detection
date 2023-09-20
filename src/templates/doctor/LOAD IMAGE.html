@@ -1,0 +1,19 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <h1>LOAD IMAGE </h1>
+    <table class="table table-dark table table-hover">
+      <tr>
+        <td width="201">Image </td>
+        <td width="269"><input type="file" name="file" /></td>
+         <td><a href="/LOAD_IMAGE"> LOAD IMAGE</a></td>
+      </tr>
+      </table>
+
+    <input type="submit" value="Upload" />
+
+</form>
+</body>
+{% endblock %}

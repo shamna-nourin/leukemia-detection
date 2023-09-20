@@ -1,0 +1,30 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/ADD_NEW_SCHEDULE_post">
+
+    <table class="table table-hover">
+      <tr>
+        <td >DATE</td>
+        <td ><input class="form-control" type="DATE" name="textfield" required /></td>
+      </tr>
+      <tr>
+        <td>FROM TIME </td>
+        <td><input class="form-control" type="TIME" name="textfield2" required /></td>
+      </tr>
+      <tr>
+        <td>TO TIME </td>
+        <td><input type="TIME" class="form-control" name="textfield3" required /></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+              <input type="submit" class="btn btn-primary" name="Submit" value="ADD" />
+
+        </td>
+      </tr>
+      </table>
+
+</form>
+</body>
+{% endblock %}

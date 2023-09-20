@@ -1,0 +1,16 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+<form action="/upload_prescription" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <h1>PRESCRIPTION </h1>
+    <table width="290" border="0" class="table table-striped">
+      <tr>
+
+        <td width="129">PRESCRIPTION</td>
+        <td width="175"><input type="file" name="file" /></td>
+      </tr>
+      </table>
+    <input type="submit" name="Submit" value="UPLOAD" />
+  </div>
+</form>
+{% endblock %}

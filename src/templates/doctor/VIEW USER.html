@@ -1,0 +1,30 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+
+    <h1>VIEW USER </h1>
+    <table class="table table-dark table table-hover">
+      <tr>
+        <td width="95">NAME</td>
+        <td width="70">DOB</td>
+        <td width="126">GENDER</td>
+        <td width="142">ADDRESS</td>
+        <td width="168">PHONE NUMBER </td>
+        <td width="78">EMAIL</td>
+      </tr>
+      {%for i in data%}
+      <tr>
+        <td>{{i['first_name']}} {{i['last_name']}}</td>
+        <td>{{i['dob']}}</td>
+        <td>{{i['gender']}}&nbsp;</td>
+        <td>{{i['place']}}<br> {{i['post']}} <br>{{i['pin']}} &nbsp;</td>
+        <td>&nbsp;{{i['phone_number']}}</td>
+        <td>{{i['email_id']}}</td>
+      </tr>
+       {% endfor%}
+      </table>
+
+</form>
+</body>
+{% endblock %}

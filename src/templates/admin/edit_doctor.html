@@ -1,0 +1,68 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<h1 align="center">REGISTRATION</h1>
+<form id="form1" name="form1" method="post" action="/edit_doc_post">
+  <div align="center">
+    <table class="table table-hover" >
+      <tr>
+        <td>FIRST NAME        </td>
+        <td><input type="text" class="form-control" name="textfield" value="{{ data['first_name'] }}"  required=""  pattern="[A-Z a-z.]{3,25}"/></td>
+      </tr>
+      <tr>
+        <td>LAST NAME        </td>
+        <td><input class="form-control" type="text" name="textfield2" value="{{ data['last_name'] }}"  required=""  pattern="[A-Z a-z.]{1,25}"/></td>
+      </tr>
+      <tr>
+        <td>GENDER                                                                                                                                                                                                       </td>
+        <td> FEMALE
+        <input type="radio"  name="gen" value="Female" {% if data['gender']=="Female" %} checked {% endif %}/>
+         MALE
+        <input type="radio" name="gen" value="Male" {% if data['gender']=="Male" %} checked {% endif %}/></td>
+      </tr>
+      <tr>
+        <td>PLACE        </td>
+        <td><input class="form-control" type="text" name="textfield3" value="{{ data['place'] }}"  required=""  pattern="[A-Z a-z.]{3,25}"/></td>
+      </tr>
+      <tr>
+        <td>POST        </td>
+        <td><input class="form-control" type="text" name="textfield4"  required=""  pattern="[A-Z a-z.]{3,25}" value="{{ data['post'] }}" /></td>
+      </tr>
+      <tr>
+        <td>PINCODE        </td>
+        <td><input class="form-control" type="text" name="textfield5" value="{{ data['pin'] }}" required maxlength="6" pattern="[6]{1}[0-9]{5}" /></td>
+      </tr>
+      <tr>
+        <td>QUALIFICATION        </td>
+        <td><input class="form-control" type="text" name="textfield6" value="{{ data['qualification'] }}" required/></td>
+      </tr>
+      <tr>
+        <td>SPECIALISATION        </td>
+        <td><select class="form-control" name="select">
+          <option {% if data['specialisation']=="Ortho" %} selected {% endif %}>Ortho</option>
+          <option {% if data['specialisation']=="neuro" %} selected {% endif %}>neuro</option>
+          <option {% if data['specialisation']=="ENT" %} selected {% endif %}>ENT</option>
+          <option {% if data['specialisation']=="physician" %} selected {% endif %}>Physician</option>
+          <option {% if data['specialisation']=="cardio" %} selected {% endif %}>cardio</option>
+          <option {% if data['specialisation']=="dermatologist" %} selected {% endif %}>dermatologist</option>
+          <option {% if data['specialisation']=="oncology" %} selected {% endif %}>oncology</option>
+          <option {% if data['specialisation']=="general medicin" %} selected {% endif %}>general medicine</option>
+          <option {% if data['specialisation']=="pediatrician" %} selected {% endif %}>pediatrician</option>
+                </select></td>
+      </tr>
+      <tr>
+        <td>PHONE NUMBER </td>
+        <td><input class="form-control" type="text" name="textfield8" value="{{ data['phone_number'] }}"  pattern="[6-9]{1}[0-9]{9}" maxlength="10" required=""/></td>
+      </tr>
+      <tr>
+        <td>EMAIL ID </td>
+        <td><input class="form-control" type="email" name="textfield9" value="{{ data['email_id'] }}" required /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><div align="center">
+          <input class="btn btn-primary" type="submit" name="Submit" value="UPDATE" />
+        </div></td>
+      </tr>
+      </table>
+  </div>
+</form>
+{% endblock %}
